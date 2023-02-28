@@ -8,6 +8,10 @@ import Drink from '../Drink/Drink'
 const Browse = () => {
   const [drinks, setDrinks] = useState([])
 
+  useEffect(() => {
+    setDrinks()
+  }, [])
+
   const createCards = () => {
     return drinks.map(drink => <Drink />)
   }
