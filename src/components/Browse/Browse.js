@@ -15,7 +15,7 @@ const Browse = () => {
     <>
       <Header page='browse' />
       <section className="card-display">
-        {createCards()}
+        {drinks && createCards()}
       </section>
     </>
   )
