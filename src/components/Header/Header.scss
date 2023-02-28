@@ -12,3 +12,8 @@
   height: 10vh;
   width: 90vw;
 }
+
+.reason {
+  @include lightFont;
+  
+}
