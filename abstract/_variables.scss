@@ -1,17 +1,22 @@
-$darkestPurp: #210E1B;
+$sheerPurp: rgba(33, 14, 27, 0.5);
 $darkPurp: #431C36;
 $medPurp: #5A2648;
 $lightPurp: #AD93A4;
 $palePurp: #D6C9D1;
 
-@mixin transBack() {
-
+@mixin transBack($height, $width) {
+  background-color: $sheerPurp;
+  height: $height;
+  width: $width;
 }
 
 @mixin cardBack {
-
+  background-color: $medPurp;
+  height: 25vh;
+  width: 20vw;
 }
 
-@mixin lightFont {
-
+@mixin lightFont($size) {
+  color: $palePurp;
+  font-size: $size;
 }
