@@ -7,7 +7,6 @@ function App() {
     <main>
       <Routes>
         <Route path='/' element={<Landing />}/>
-
       </Routes>
     </main>
   );
