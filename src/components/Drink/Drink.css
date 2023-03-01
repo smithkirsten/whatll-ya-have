@@ -1,1 +1,12 @@
-/*# sourceMappingURL=Drink.css.map */
+.drink-card {
+  background-color: #5A2648;
+  height: 30vh;
+  width: 40vw;
+}
+.drink-card .drink-image {
+  height: 90%;
+  width: 90%;
+}
+.drink-card :hover .drink-name {
+  visibility: visible;
+}/*# sourceMappingURL=Drink.css.map */

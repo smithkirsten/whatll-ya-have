@@ -10,7 +10,6 @@ const DrinkDeets = (props) => {
   const { id } = useParams()
 
   useEffect(() => {
-
     fetchData(id)
       .then(data => {
         console.log(data)

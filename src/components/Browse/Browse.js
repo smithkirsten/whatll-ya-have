@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useParams } from "react";
 import { NavLink } from "react-router-dom";
 import './Browse.css'
 import { fetchData } from "../../apiCalls";
@@ -52,7 +52,7 @@ const Browse = () => {
   }, [])
 
   const createCards = () => {
-    return drinks.map(drink => <Drink drink={drink} key={drink.idDrink} />)
+    return drinks.map(drink => <NavLink to={`/drink/${drink.idDrink}`}><Drink drink={drink} key={drink.idDrink} /></NavLink>)
   }
 
   return (

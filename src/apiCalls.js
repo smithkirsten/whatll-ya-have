@@ -1,4 +1,5 @@
 export const fetchData = () => {
+  const myKey = process.env.REACT_APP_API_KEY_CDB
   // try {
   //   const response = await fetch(url)
   //   const data = await response.json()
@@ -13,7 +14,7 @@ export const fetchData = () => {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '0ba55045bemsh7c87450d2a771b8p155de8jsn591dafeb3f86',
+      'X-RapidAPI-Key': myKey,
       'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
     }
   };
