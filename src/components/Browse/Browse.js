@@ -52,7 +52,7 @@ const Browse = () => {
   }, [])
 
   const createCards = () => {
-    return drinks.map(drink => <Drink />)
+    return drinks.map(drink => <Drink drink={drink} key={drink.idDrink} />)
   }
 
   return (
