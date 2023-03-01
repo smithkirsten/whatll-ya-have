@@ -1,8 +1,16 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-const Drink = () => {
+const Drink = ({ drink }) => {
   return (
-    <p>this is a drink!</p>
+    <NavLink>
+      <article className="drink-card" id={drink.idDrink}>
+        <div className='drink-image'>
+          <p className='drink-name'>{drink.strDrink}</p>
+        </div>
+      </article>
+    </NavLink>
+   
   )
 }
 
