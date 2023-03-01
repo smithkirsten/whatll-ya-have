@@ -65,7 +65,9 @@ const DrinkDeets = (props) => {
   const { id } = useParams()
 
   useEffect(() => {
-    setDrink(cleanData(gotDrink))
+    if (!drink.idDrink) {
+      setDrink(cleanDrink(gotDrink))
+    }
     // fetchData(id)
     //   .then(data => {
     //     console.log(data)
