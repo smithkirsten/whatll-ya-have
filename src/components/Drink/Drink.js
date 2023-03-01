@@ -10,7 +10,7 @@ const Drink = ({ drink }) => {
     backgroundSize: 'cover'
   }
   return (
-    <NavLink>
+    <NavLink to={`/drink/${drink.idDrink}`}>
       <article className="drink-card" id={drink.idDrink}>
         <div className='drink-image' style={background}>
           <p className='drink-name hidden'>{drink.strDrink}</p>
