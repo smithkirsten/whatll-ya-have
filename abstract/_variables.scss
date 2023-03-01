@@ -12,8 +12,8 @@ $palePurp: #D6C9D1;
 
 @mixin cardBack {
   background-color: $medPurp;
-  height: 25vh;
-  width: 20vw;
+  height: 30vh;
+  width: 40vw;
 }
 
 @mixin lightFont($size) {
