@@ -1,16 +1,45 @@
 export const cleanDrink = (drink) => {
   const keys = Object.keys(drink)
-  const keepers = ['idDrink', 'strDrink', 'strTags', 'strGlass', 'strInstructions', 'strDrinkThumb']
+  const toss = ['strDrinkAlternate',
+    'strCategory',
+    'strIBA',
+    'strAlcoholic',
+    'strInstructionsES',
+    'strInstructionsDE',
+    'strInstructionsFR',
+    'strInstructionsIT',
+    'strInstructionsZH-HANS',
+    'strInstructionsZH-HANT',
+    'strImageSource',
+    'strImageAttribution',
+    'strCreativeCommonsConfirmed',
+    'dateModified',]
   keys.forEach(key => {
-    if (!keepers.includes(key) || (key.includes('strIngredient') && !drink[key]) || (key.includes('strMeasure') && !drink[key])) {
+    if (toss.includes(key) || (key.includes('strIngredient') && !drink[key]) || (key.includes('strMeasure') && !drink[key])) {
       delete drink[key]
     }
-    console.log(drink)
-    return drink
   })
-
+  return drink
 }
+//TOSS
+// strDrinkAlternate,
+// strCategory,
+// strIBA,
+// strAlcoholic,
+// strInstructionsES,
+// strInstructionsDE,
+// strInstructionsFR,
+// strInstructionsIT,
+// strInstructionsZH-HANS,
+// strInstructionsZH-HANT,
+// strImageSource,
+// strImageAttribution,
+// strCreativeCommonsConfirmed,
+// dateModified,
 
+//video??? maybe if enough have it....
+
+//KEEP
 //idDrink
 //strDrink
 //strTags
@@ -19,3 +48,6 @@ export const cleanDrink = (drink) => {
 //strDrinkThumb
 //strIngredient[]
 //strMeasure[]
+
+
+
