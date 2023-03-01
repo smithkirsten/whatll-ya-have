@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router'
 import './App.css';
 import Landing from '../Landing/Landing';
 import Browse from '../Browse/Browse';
+import DrinkDeets from '../DrinkDeets/DrinkDeets';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Landing />}/>
         <Route path='/browse' element={<Browse />}/>
+        <Route path='/drink/:id' element={<DrinkDeets />} />
       </Routes>
     </main>
   );
