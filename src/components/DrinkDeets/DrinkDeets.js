@@ -94,7 +94,7 @@ const DrinkDeets = () => {
       <section className="drink-display">
         <div className="fav-bar">
           <p>IS THIS YOUR DRINK?</p>
-          {/* <img /> */}
+          <AiOutlineHeart className='heart'/>
         </div>
         <img src={drink.strDrinkThumb} alt={`photo of ${drink.strDrink}`} className="drink-img"/>
         <h1>{drink.strDrink}</h1>
