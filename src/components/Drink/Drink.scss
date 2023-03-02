@@ -1,0 +1,15 @@
+@use '../../../abstract/variables' as *;
+
+.drink-card {
+  @include cardBack;
+  .drink-image {
+    height: 90%;
+    width: 90%;
+  }
+  :hover {
+    .drink-name {
+      visibility: visible;
+    }
+  }
+
+}

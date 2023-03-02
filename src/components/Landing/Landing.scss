@@ -1,0 +1,7 @@
+@use '../../../abstract/variables' as *;
+
+.pitch {
+  @include transBack(60vh, 80vw);
+  @include lightFont(50px);
+
+}

@@ -1,1 +1,17 @@
-/*# sourceMappingURL=Header.css.map */
+.header {
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  background-color: rgba(33, 14, 27, 0.5);
+  border-bottom: 3px solid #AD93A4;
+}
+
+.logo {
+  height: 10vh;
+  width: 90vw;
+}
+
+.reason {
+  color: #D6C9D1;
+  font-size: 14px;
+}/*# sourceMappingURL=Header.css.map */
