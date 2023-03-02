@@ -66,15 +66,18 @@ const DrinkDeets = (props) => {
   const { id } = useParams()
 
   useEffect(() => {
+    // if (!drink.idDrink) {
+    //   setDrink(cleanDrink(gotDrink))
+    // }
     if (!drink.idDrink) {
-      setDrink(cleanDrink(gotDrink))
+      fetchData(id)
+        .then(data => {
+          console.log(data)
+          setDrink(cleanDrink(data.drinks))
+        })
+        .catch(error => setError(error))
     }
-    // fetchData(id)
-    //   .then(data => {
-    //     console.log(data)
-    //     setDrink(data.drinks)
-    //   })
-    //   .catch(error => setError(error))
+
   }, [])
 
   return (
