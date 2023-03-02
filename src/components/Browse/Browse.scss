@@ -1,1 +1,8 @@
 @use '../../../abstract/variables' as *;
+
+.card-display {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}

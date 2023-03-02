@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   height: 20vh;
+  width: 100%;
   background-color: rgba(33, 14, 27, 0.5);
   border-bottom: 3px solid #AD93A4;
 }
