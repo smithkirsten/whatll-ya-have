@@ -1,5 +1,7 @@
 import React from "react";
 import './DrinkDeets.css'
+import { AiFillHeart } from 'react-icons/ai'
+import { AiOutlineHeart } from 'react-icons/ai'
 import { cleanDrink } from "../../util";
 import { fetchData } from "../../apiCalls";
 import { useState, useEffect } from "react";
@@ -60,7 +62,7 @@ const gotDrink = {
   "dateModified": "2016-07-18 22:09:04"
 }
 
-const DrinkDeets = (props) => {
+const DrinkDeets = () => {
   const [drink, setDrink] = useState({})
   const [error, setError] = useState('')
   const { id } = useParams()

@@ -9,4 +9,7 @@
 }
 .drink-card :hover .drink-name {
   visibility: visible;
+}
+.drink-card .heart {
+  color: #FB78BC;
 }/*# sourceMappingURL=Drink.css.map */

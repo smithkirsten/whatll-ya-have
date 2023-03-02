@@ -38,6 +38,7 @@ const Browse = () => {
   const [drinks, setDrinks] = useState([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState('')
+  // const { favorites } = useParams()
 
   useEffect(() => {
     // if(!drinks.length) {
