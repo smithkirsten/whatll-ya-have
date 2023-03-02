@@ -3,6 +3,7 @@ import { useState, useEffect, useParams } from "react";
 import { NavLink } from "react-router-dom";
 import './Browse.css'
 import { fetchData } from "../../apiCalls";
+import { addFavProp } from "../../util";
 import Header from "../Header/Header";
 import Drink from '../Drink/Drink'
 
@@ -39,7 +40,7 @@ const Browse = () => {
   const [loading, setLoading] = useState('')
 
   useEffect(() => {
-    // if(!drinks) {
+    // if(!drinks.length) {
     //   fetchData()
     //     .then(data => {
     //       console.log(data)
@@ -50,7 +51,9 @@ const Browse = () => {
     //       setError(error)
     //     })
     // }
-    setDrinks(dummyArray)
+    if(!drinks.length) {
+      setDrinks(addFavProp(dummyArray))
+    }
   }, [])
 
   const createCards = () => {
