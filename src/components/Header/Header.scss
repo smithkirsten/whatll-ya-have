@@ -23,5 +23,8 @@
 }
 
 .nav-buttons {
-  
+  @include
+  border: none;
+  background-color: none;
+
 }
