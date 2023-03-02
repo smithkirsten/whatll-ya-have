@@ -1,3 +1,7 @@
+export const cleanAllDrinks = () => {
+  
+}
+
 export const cleanDrink = (drink) => {
   const keys = Object.keys(drink)
   const toss = ['strDrinkAlternate',
