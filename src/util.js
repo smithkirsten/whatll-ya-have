@@ -1,5 +1,6 @@
-export const cleanAllDrinks = () => {
-  
+export const addFavProp = (data) => {
+  data.forEach(drink => drink.fav = false)
+  return data
 }
 
 export const cleanDrink = (drink) => {
