@@ -9,6 +9,7 @@ function App() {
     <main>
       <Routes>
         <Route path='/browse' element={<Browse />}/>
+        <Route path='/favorites' element={<Browse />} />
         <Route path='/drink/:id' element={<DrinkDeets />} />
         <Route path='/' element={<Landing />}/>
       </Routes>

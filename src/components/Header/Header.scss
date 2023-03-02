@@ -1,7 +1,9 @@
 @use '../../../abstract/variables' as *;
 
 .header {
+  @include lightFont(14px);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 20vh;
   background-color: $sheerPurp;
@@ -15,5 +17,15 @@
 
 .reason {
   @include lightFont(14px);
-  
+}
+
+.buttons {
+  height: 7vh;
+}
+
+.nav-buttons {
+  // @include lightFont(14px);
+  border: none;
+  background-color: none;
+
 }

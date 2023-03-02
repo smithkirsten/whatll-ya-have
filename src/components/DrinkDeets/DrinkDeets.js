@@ -1,4 +1,5 @@
 import React from "react";
+import './DrinkDeets.css'
 import { cleanDrink } from "../../util";
 import { fetchData } from "../../apiCalls";
 import { useState, useEffect } from "react";
@@ -68,24 +69,43 @@ const DrinkDeets = (props) => {
     if (!drink.idDrink) {
       setDrink(cleanDrink(gotDrink))
     }
-    // fetchData(id)
-    //   .then(data => {
-    //     console.log(data)
-    //     setDrink(data.drinks)
-    //   })
-    //   .catch(error => setError(error))
+    // if (!drink.idDrink) {
+    //   console.log('fetching')
+    //   fetchData(id)
+    //     .then(data => {
+    //       setDrink(cleanDrink(data.drinks[0]))
+    //     })
+    //     .catch(error => setError(error))
+    //}
+
   }, [])
+
+  const createList = (property) => {
+    if(drink.idDrink) {
+      return drink[property].map(string => <li className='list-item'>{string}</li>)
+    }
+  }
 
   return (
     <>
       <Header page='drink'/>
-      <div className="fav-bar">
-        <p>IS THIS YOUR DRINK?</p>
-        <img />
-      </div>
-      <img />
-      <div className="ingredients"></div>
-      <div className="directions"></div>
+      <section className="drink-display">
+        <div className="fav-bar">
+          <p>IS THIS YOUR DRINK?</p>
+          {/* <img /> */}
+        </div>
+        <img src={drink.strDrinkThumb} alt={`photo of ${drink.strDrink}`} className="drink-img"/>
+        <h1>{drink.strDrink}</h1>
+        <div className="recipe">
+          <ul className='ingredients'>
+            {createList('ingredients')}
+          </ul>
+          <ul className='measurements'>
+            {createList('measurements')}
+          </ul>
+        </div>
+        <div className="directions">{drink.strInstructions}</div>
+      </section>
     </>
   )
 }

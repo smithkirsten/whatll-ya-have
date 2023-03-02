@@ -19,7 +19,6 @@ export const fetchData = (id) => {
       'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
     }
   };
-  
   return fetch(url, options)
           .then((response) => {
             if(response.ok) {
