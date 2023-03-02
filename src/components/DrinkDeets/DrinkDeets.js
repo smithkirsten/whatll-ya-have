@@ -1,4 +1,5 @@
 import React from "react";
+import './DrinkDeets.css'
 import { cleanDrink } from "../../util";
 import { fetchData } from "../../apiCalls";
 import { useState, useEffect } from "react";
@@ -79,13 +80,23 @@ const DrinkDeets = (props) => {
   return (
     <>
       <Header page='drink'/>
-      <div className="fav-bar">
-        <p>IS THIS YOUR DRINK?</p>
-        <img />
-      </div>
-      <img />
-      <div className="ingredients"></div>
-      <div className="directions"></div>
+      <section className="drink-display">
+        <div className="fav-bar">
+          <p>IS THIS YOUR DRINK?</p>
+          {/* <img /> */}
+        </div>
+        <img src={drink.strDrinkThumb} alt={`photo of ${drink.strDrink}`} className="drink-img"/>
+        <h1>{drink.strDrink}</h1>
+        <div className="recipe">
+          <ul className='ingedients'>
+            <p>list here</p>
+          </ul>
+          <ul className='measurements'>
+            <p>list here</p>
+          </ul>
+        </div>
+        <div className="directions">{drink.strInstructions}</div>
+      </section>
     </>
   )
 }

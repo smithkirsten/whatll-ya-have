@@ -1,0 +1,32 @@
+@use '../../../abstract/variables' as *;
+
+.drink-display {
+  @include lightFont(14px);
+  height: 78vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .recipe {
+    @include transBack(10vh, 90vw);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .directions {
+    font-size: 16px;
+  }
+
+}
+
+.drink-img {
+  height: 35vh;
+  border: 10px solid $medPurp;
+}
