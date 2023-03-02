@@ -57,11 +57,13 @@ const Browse = () => {
     }
   }, [])
 
-  const createCards = () => {
-    return drinks.map(drink => <NavLink to={`/drink/${drink.idDrink}`}><Drink drink={drink} key={drink.idDrink} /></NavLink>)
+  const createCards = (favorites) => {
+    const showDrinks = favorites ? drinks.filter(drink => drink.favorite): drinks;
+    return showDrinks.map(drink => <NavLink to={`/drink/${drink.idDrink}`}><Drink drink={drink} key={drink.idDrink} /></NavLink>)
   }
 
   return (
+    //add conditional rendering for favorites or not
     <>
       <Header page='browse' />
       <section className="card-display">
