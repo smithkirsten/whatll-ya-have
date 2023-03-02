@@ -56,10 +56,19 @@ const Browse = () => {
       setDrinks(addFavProp(dummyArray))
     }
   }, [])
+  const toggleFav = (id) => {
+    const updatedDrinks = drinks.map(drink => {
+      if(drink.idDrink === id) {
+        drink.favorite = !drink.favorite
+      }
+      return drink
+    })
+    setDrinks(updatedDrinks)
+  }
 
   const createCards = (favorites) => {
     const showDrinks = favorites ? drinks.filter(drink => drink.favorite): drinks;
-    return showDrinks.map(drink => <NavLink to={`/drink/${drink.idDrink}`}><Drink drink={drink} key={drink.idDrink} /></NavLink>)
+    return showDrinks.map(drink => <NavLink to={`/drink/${drink.idDrink}`}><Drink drink={drink} toggleFav={toggleFav} key={drink.idDrink} /></NavLink>)
   }
 
   return (
