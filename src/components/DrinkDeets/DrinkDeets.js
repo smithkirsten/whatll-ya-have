@@ -80,6 +80,10 @@ const DrinkDeets = (props) => {
 
   }, [])
 
+  const createList = () => {
+
+  }
+
   return (
     <>
       <Header page='drink'/>

@@ -1,5 +1,8 @@
 .header {
+  color: #D6C9D1;
+  font-size: 14px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 20vh;
   background-color: rgba(33, 14, 27, 0.5);
@@ -14,4 +17,13 @@
 .reason {
   color: #D6C9D1;
   font-size: 14px;
+}
+
+.buttons {
+  height: 7vh;
+}
+
+.nav-buttons {
+  border: none;
+  background-color: none;
 }/*# sourceMappingURL=Header.css.map */

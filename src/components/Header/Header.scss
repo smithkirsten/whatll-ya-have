@@ -1,6 +1,7 @@
 @use '../../../abstract/variables' as *;
 
 .header {
+  @include lightFont(14px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,7 +24,7 @@
 }
 
 .nav-buttons {
-  @include
+  // @include lightFont(14px);
   border: none;
   background-color: none;
 
