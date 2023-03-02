@@ -80,8 +80,10 @@ const DrinkDeets = (props) => {
 
   }, [])
 
-  const createList = () => {
-
+  const createList = (property) => {
+    if(drink.idDrink) {
+      return drink[property].map(string => <li className='list-item'>{string}</li>)
+    }
   }
 
   return (
@@ -95,11 +97,11 @@ const DrinkDeets = (props) => {
         <img src={drink.strDrinkThumb} alt={`photo of ${drink.strDrink}`} className="drink-img"/>
         <h1>{drink.strDrink}</h1>
         <div className="recipe">
-          <ul className='ingedients'>
-            <p>list here</p>
+          <ul className='ingredients'>
+            {createList('ingredients')}
           </ul>
           <ul className='measurements'>
-            <p>list here</p>
+            {createList('measurements')}
           </ul>
         </div>
         <div className="directions">{drink.strInstructions}</div>
