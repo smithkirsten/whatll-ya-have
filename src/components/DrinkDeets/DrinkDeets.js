@@ -90,7 +90,7 @@ const DrinkDeets = () => {
 
   return (
     <>
-      <Header />
+      <Header key={'drink'}/>
       <section className="drink-display">
         {/* <div className="fav-bar">
           <p>IS THIS YOUR DRINK?</p>

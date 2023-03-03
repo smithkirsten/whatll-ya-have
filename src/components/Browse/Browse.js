@@ -83,7 +83,7 @@ const Browse = () => {
   return (
     //add conditional rendering for favorites or not
     <>
-      <Header />
+      <Header key={path}/>
       <section className="card-display">
         {error && <p>error city</p>}
         {!drinks && <p>loading...</p>}
