@@ -62,7 +62,7 @@ const gotDrink = {
   "dateModified": "2016-07-18 22:09:04"
 }
 
-const DrinkDeets = () => {
+const DrinkDeets = ({ drinks, toggleFav }) => {
   const [drink, setDrink] = useState({})
   const [error, setError] = useState('')
   const { id, favorite } = useParams()
@@ -88,14 +88,25 @@ const DrinkDeets = () => {
     }
   }
 
+  const assessFav = () => {
+    console.log('drink value: ', drink)
+    if(!drink.idDrink) {
+      console.log('no drink!')
+      return false
+    } 
+    const drinkInfo = drinks.find(el => el.idDrink === drink.idDrink)
+    console.log(drinkInfo)
+    return drinkInfo.fav ? true : false
+  }
+
   return (
     <>
       <Header />
       <section className="drink-display">
-        {/* <div className="fav-bar">
+        <div className="fav-bar">
           <p>IS THIS YOUR DRINK?</p>
-          <button className='fav-button'>{favorite ? <AiFillHeart className='heart'/> : <AiOutlineHeart className='heart'/> }</button>
-        </div> */}
+          <button className='fav-button'>{ assessFav() ? <AiFillHeart className='heart'/> : <AiOutlineHeart className='heart'/> }</button>
+        </div>
         <img src={drink.strDrinkThumb} alt={`photo of ${drink.strDrink}`} className="drink-img"/>
         <h1>{drink.strDrink}</h1>
         <div className="recipe">

@@ -10,7 +10,7 @@ const Browse = ({ drinks, toggleFav, error }) => {
 
   const createCards = () => {
     const showDrinks = path === 'favorites' ? drinks.filter(drink => drink.fav): drinks;
-    return showDrinks.map(drink => <NavLink to={`/drink/${drink.idDrink}/${drink.fav}`} key={Date.now()}><Drink drink={drink} toggleFav={toggleFav} key={drink.idDrink} /></NavLink>)
+    return showDrinks.map(drink => <NavLink to={`/drink/${drink.idDrink}`} key={Date.now()}><Drink drink={drink} toggleFav={toggleFav} key={drink.idDrink} /></NavLink>)
   }
 
   return (

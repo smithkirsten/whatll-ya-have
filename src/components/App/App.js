@@ -74,7 +74,7 @@ function App() {
       <Routes>
         <Route path='/browse' element={<Browse drinks={drinks} toggleFav={toggleFav}/>} />
         <Route path='/favorites' element={<Browse drinks={drinks} toggleFav={toggleFav} />} />
-        <Route path='/drink/:id/:favorite' element={<DrinkDeets drinks={drinks} toggleFav={toggleFav} />} />
+        <Route path='/drink/:id' element={<DrinkDeets drinks={drinks} toggleFav={toggleFav} />} />
         <Route path='/' element={<Landing drinks={drinks} error={error} />}/>
       </Routes>
     </main>
