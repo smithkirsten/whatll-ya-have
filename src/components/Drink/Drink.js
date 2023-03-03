@@ -16,7 +16,7 @@ const Drink = ({ drink, toggleFav }) => {
         <div className='drink-image' style={background}>
           <p className='drink-name hidden'>{drink.strDrink}</p>
         </div>
-        <button className='fav-button' onClick={() => toggleFav(drink.idDrink)}>{drink.favorite ? <AiFillHeart className="fav-heart heart"/> : <AiOutlineHeart className="open-heart heart"/>}</button>
+        <button className='fav-button' onClick={() => toggleFav(drink.idDrink)}>{drink.fav ? <AiFillHeart className="fav-heart heart"/> : <AiOutlineHeart className="open-heart heart"/>}</button>
       </article>
   )
 }

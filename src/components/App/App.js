@@ -59,7 +59,10 @@ function App() {
     const toggleFav = (id) => {
       const updatedDrinks = drinks.map(drink => {
         if(drink.idDrink === id) {
-          drink.favorite = !drink.favorite
+          return {
+            ...drink,
+            fav:!drink.fav
+          }
         }
         return drink
       })
@@ -72,7 +75,7 @@ function App() {
         <Route path='/browse' element={<Browse drinks={drinks} toggleFav={toggleFav}/>} />
         <Route path='/favorites' element={<Browse drinks={drinks} toggleFav={toggleFav} />} />
         <Route path='/drink/:id/:favorite' element={<DrinkDeets drinks={drinks} toggleFav={toggleFav} />} />
-        <Route path='/' element={<Landing />}/>
+        <Route path='/' element={<Landing drinks={drinks} error={error} />}/>
       </Routes>
     </main>
   );

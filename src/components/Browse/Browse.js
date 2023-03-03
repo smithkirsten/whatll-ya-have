@@ -5,18 +5,15 @@ import Header from "../Header/Header";
 import Drink from '../Drink/Drink'
 
 
-const Browse = () => {
+const Browse = ({ drinks, toggleFav, error }) => {
   const path = window.location.href.split('/')[3]
 
-
-
-  const createCards = (favorites) => {
-    const showDrinks = path === 'favorites' ? drinks.filter(drink => drink.favorite): drinks;
-    return showDrinks.map(drink => <NavLink to={`/drink/${drink.idDrink}/${drink.fav}`}><Drink drink={drink} toggleFav={toggleFav} key={drink.idDrink} /></NavLink>)
+  const createCards = () => {
+    const showDrinks = path === 'favorites' ? drinks.filter(drink => drink.fav): drinks;
+    return showDrinks.map(drink => <NavLink to={`/drink/${drink.idDrink}/${drink.fav}`} key={Date.now()}><Drink drink={drink} toggleFav={toggleFav} key={drink.idDrink} /></NavLink>)
   }
 
   return (
-    //add conditional rendering for favorites or not
     <>
       <Header />
       <section className="card-display">
