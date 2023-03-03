@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector} from 'react-redux'
-import { updateDrinks } from "./BrowseSlice";
+import { updateDrinks, toggleFavorite } from "./BrowseSlice";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import './Browse.css'
@@ -61,18 +61,24 @@ const Browse = () => {
     //   setDrinks(addFavProp(dummyArray))
     // }
   }, [])
+
   const toggleFav = (id) => {
     console.log('toggling', id)
     console.log(drinks)
-    const updatedDrinks = drinks.map(drink => {
-      if(drink.idDrink === id) {
-        console.log('match')
-        drink.fav = !drink.fav
-        console.log(drink.fav)
-      }
-      return drink
-    })
-    dispatch(updateDrinks(updatedDrinks))
+
+    dispatch(toggleFav(id))
+
+    // const copy = drinks;
+    
+    // const updatedDrinks = copy.map(drink => {
+    //   if(drink.idDrink === id) {
+    //     console.log('match')
+    //     drink.fav = !drink.fav
+    //     console.log(drink.fav)
+    //   }
+    //   return drink
+    // })
+    // dispatch(updateDrinks(updatedDrinks))
   }
 
   const createCards = (favorites) => {
