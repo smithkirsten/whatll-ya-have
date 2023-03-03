@@ -68,17 +68,17 @@ const DrinkDeets = () => {
   const { id, favorite } = useParams()
 
   useEffect(() => {
-    if (!drink.idDrink) {
-      setDrink(cleanDrink(gotDrink))
-    }
     // if (!drink.idDrink) {
-    //   console.log('fetching')
-    //   fetchData(id)
-    //     .then(data => {
-    //       setDrink(cleanDrink(data.drinks[0]))
-    //     })
-    //     .catch(error => setError(error))
-    //}
+    //   setDrink(cleanDrink(gotDrink))
+    // }
+    if (!drink.idDrink) {
+      console.log('fetching single')
+      fetchData(id)
+        .then(data => {
+          setDrink(cleanDrink(data.drinks[0]))
+        })
+        .catch(error => setError(error))
+    }
 
   }, [])
 

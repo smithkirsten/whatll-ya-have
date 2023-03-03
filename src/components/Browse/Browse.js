@@ -41,25 +41,29 @@ const Browse = () => {
   const path = window.location.href.split('/')[3]
 
   useEffect(() => {
-    // if(!drinks.length) {
-    //   fetchData()
-    //     .then(data => {
-    //       console.log(data)
-    //       setDrinks(data.drinks)
-    //     })
-    //     .catch((error) => {
-    //       console.log(error)
-    //       setError(error)
-    //     })
-    // }
     if(!drinks.length) {
-      setDrinks(addFavProp(dummyArray))
+      console.log('fetching all')
+      fetchData()
+        .then(data => {
+          setDrinks(addFavProp(data.drinks))
+        })
+        .catch((error) => {
+          console.log(error)
+          setError(error)
+        })
     }
+    // if(!drinks.length) {
+    //   setDrinks(addFavProp(dummyArray))
+    // }
   }, [])
   const toggleFav = (id) => {
+    console.log('toggling', id)
+    console.log(drinks)
     const updatedDrinks = drinks.map(drink => {
       if(drink.idDrink === id) {
-        drink.favorite = !drink.favorite
+        console.log('match')
+        drink.fav = !drink.fav
+        console.log(drink.fav)
       }
       return drink
     })
@@ -67,7 +71,7 @@ const Browse = () => {
   }
 
   const createCards = (favorites) => {
-    const showDrinks = path === 'favorites' ? drinks.filter(drink => drink.favorite): drinks;
+    const showDrinks = path === 'favorites' ? drinks.filter(drink => drink.fav) : drinks;
     return showDrinks.map(drink => <NavLink to={`/drink/${drink.idDrink}/${drink.fav}`}><Drink drink={drink} toggleFav={toggleFav} key={drink.idDrink} /></NavLink>)
   }
 
