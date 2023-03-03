@@ -1,8 +1,9 @@
 @use '../../../abstract/variables' as *;
 
 .header {
+  @include lightFont(16px);
+  text-align: center;
   padding: 5px;
-  @include lightFont(14px);
   display: flex;
   flex-direction: column;
   justify-content: center;

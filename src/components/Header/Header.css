@@ -1,8 +1,9 @@
 .header {
-  padding: 5px;
   font-family: "Barlow", sans-serif;
   color: #D6C9D1;
-  font-size: 14px;
+  font-size: 16px;
+  text-align: center;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;

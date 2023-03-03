@@ -6,6 +6,7 @@ import { addFavProp } from "../../util";
 import './App.css';
 import Landing from '../Landing/Landing';
 import Browse from '../Browse/Browse';
+import Favorites from '../Favorites/Favorites';
 import DrinkDeets from '../DrinkDeets/DrinkDeets';
 
 const dummyArray = [{
@@ -40,20 +41,20 @@ function App() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    // if(!drinks.length) {
-    //   fetchData()
-    //     .then(data => {
-    //       console.log(data)
-    //       setDrinks(data.drinks)
-    //     })
-    //     .catch((error) => {
-    //       console.log(error)
-    //       setError(error)
-    //     })
-    // }
     if(!drinks.length) {
-      setDrinks(addFavProp(dummyArray))
+      fetchData()
+        .then(data => {
+          console.log(data)
+          setDrinks(addFavProp(data.drinks))
+        })
+        .catch((error) => {
+          console.log(error)
+          setError(error)
+        })
     }
+    // if(!drinks.length) {
+    //   setDrinks(addFavProp(dummyArray))
+    // }
 }, [])
 
     const toggleFav = (id) => {
@@ -72,10 +73,10 @@ function App() {
   return (
     <main>
       <Routes>
-        <Route path='/browse' element={<Browse drinks={drinks} toggleFav={toggleFav}/>} />
-        <Route path='/favorites' element={<Browse drinks={drinks} toggleFav={toggleFav} />} />
-        <Route path='/drink/:id' element={<DrinkDeets drinks={drinks} toggleFav={toggleFav} />} />
-        <Route path='/' element={<Landing drinks={drinks} error={error} />}/>
+        <Route exact path='/favorites' element={<Favorites drinks={drinks.filter(drink => drink.fav)} toggleFav={toggleFav} />} />
+        <Route exact path='/browse' element={<Browse drinks={drinks} toggleFav={toggleFav}/>} />
+        <Route exact path='/drink/:id' element={<DrinkDeets drinks={drinks} toggleFav={toggleFav} />} />
+        <Route exact path='/' element={<Landing drinks={drinks} error={error} />}/>
       </Routes>
     </main>
   );
