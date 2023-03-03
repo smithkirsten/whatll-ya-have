@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch, useSelector} from 'react-redux'
+import { updateDrinks } from "./BrowseSlice";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import './Browse.css'
@@ -35,7 +37,9 @@ const dummyArray = [{
 ]
 
 const Browse = () => {
-  const [drinks, setDrinks] = useState([])
+  const dispatch = useDispatch();
+  const drinks = useSelector((state) => state.browse.drinks)
+  // const [drinks, setDrinks] = useState([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState('')
   const path = window.location.href.split('/')[3]
@@ -45,7 +49,8 @@ const Browse = () => {
       console.log('fetching all')
       fetchData()
         .then(data => {
-          setDrinks(addFavProp(data.drinks))
+          dispatch(updateDrinks(addFavProp(data.drinks)))
+          // setDrinks(addFavProp(data.drinks))
         })
         .catch((error) => {
           console.log(error)
@@ -67,7 +72,7 @@ const Browse = () => {
       }
       return drink
     })
-    setDrinks(updatedDrinks)
+    dispatch(updateDrinks(updatedDrinks))
   }
 
   const createCards = (favorites) => {
