@@ -90,7 +90,7 @@ const DrinkDeets = () => {
 
   return (
     <>
-      <Header page='drink'/>
+      <Header />
       <section className="drink-display">
         {/* <div className="fav-bar">
           <p>IS THIS YOUR DRINK?</p>

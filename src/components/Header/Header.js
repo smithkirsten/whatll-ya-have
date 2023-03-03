@@ -3,21 +3,21 @@ import { NavLink } from "react-router-dom";
 import './Header.css'
 
 const Header = ({ page }) => {
-
-const content = <p>there are so many reasons to kick alcohol to the curb</p>
-const favButton = <NavLink to='/favorites'><button className="nav-buttons">FAVORITES</button></NavLink>
-const browseButton = <NavLink to='/browse'><button className='nav-buttons'>BROWSE ALL</button></NavLink>
-let position;
-const style = {
-  display: 'flex',
-  justifyContent: position,
-}
+  const path = window.location.href.split('/')[3]
+  const content = <p>there are so many reasons to kick alcohol to the curb</p>
+  const favButton = <NavLink to='/favorites'><button className="nav-buttons">FAVORITES</button></NavLink>
+  const browseButton = <NavLink to='/browse'><button className='nav-buttons'>BROWSE ALL</button></NavLink>
+  let position;
+  const style = {
+    display: 'flex',
+    justifyContent: position,
+  }
 
 const determineButtons = () => {
-  if (page === 'browse') {
+  if (path === 'browse') {
     position = 'flex-end'
     return favButton
-  }else if(page === 'favorites') {
+  }else if(path === 'favorites') {
     position = 'flex-start'
     return browseButton
   } else {

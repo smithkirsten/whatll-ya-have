@@ -38,6 +38,7 @@ const Browse = () => {
   const [drinks, setDrinks] = useState([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState('')
+  const path = window.location.href.split('/')[3]
 
   useEffect(() => {
     // if(!drinks.length) {
@@ -66,7 +67,6 @@ const Browse = () => {
   }
 
   const createCards = (favorites) => {
-    const path = window.location.href.split('/')[3]
     const showDrinks = path === 'favorites' ? drinks.filter(drink => drink.favorite): drinks;
     return showDrinks.map(drink => <NavLink to={`/drink/${drink.idDrink}/${drink.fav}`}><Drink drink={drink} toggleFav={toggleFav} key={drink.idDrink} /></NavLink>)
   }
@@ -74,7 +74,7 @@ const Browse = () => {
   return (
     //add conditional rendering for favorites or not
     <>
-      <Header page='browse' />
+      <Header />
       <section className="card-display">
         {error && <p>error city</p>}
         {!drinks && <p>loading...</p>}
