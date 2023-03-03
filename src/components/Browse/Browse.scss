@@ -9,5 +9,27 @@
   overflow-y: scroll;
 }
 
-//change to more columns at 600
+@media (min-width: 600px) {
+  .card-display {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 30vmin);
+    gap: 10px;
+    grid-auto-rows: minmax(35vh, auto);
+    overflow-y: scroll;
+  }
+}
 
+@media (min-width: 1050px) {
+  .card-display {
+    grid-template-columns: repeat(4, 30vmin);
+    gap: 50px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .card-display {
+    grid-template-columns: repeat(5, 30vmin);
+    gap: 50px;
+  }
+}
