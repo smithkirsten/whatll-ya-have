@@ -11,6 +11,7 @@ $palePurp: #D6C9D1;
 }
 
 @mixin lightFont($size) {
+  font-family: 'Barlow', sans-serif;
   color: $palePurp;
   font-size: $size;
 }

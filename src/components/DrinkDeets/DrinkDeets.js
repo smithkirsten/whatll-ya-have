@@ -71,7 +71,9 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
     console.log('effective', drink.idDrink)
     if (!drink.idDrink) {
       console.log('setting')
-      setDrink(cleanDrink(gotDrink))
+      const cleanedDrink = cleanDrink(gotDrink)
+      console.log('cleaned drink: ', cleanedDrink)
+      setDrink(cleanedDrink)
     }
     // if (!drink.idDrink) {
     //   console.log('fetching')
@@ -101,7 +103,8 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
   return (
     <>
       <Header key={'drink'}/>
-      <section className="drink-display">
+      {!drink && <p>loading...</p>}
+      {drink && <section className="drink-display">
         <div className="fav-bar">
           <p>IS THIS YOUR DRINK?</p>
           <button className='fav-button' onClick={() => toggleFav(drink.idDrink)}>{ assessFav() ? <AiFillHeart className='heart'/> : <AiOutlineHeart className='heart'/> }</button>
@@ -117,7 +120,7 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
           </ul>
         </div>
         <div className="directions">{drink.strInstructions}</div>
-      </section>
+      </section>}
     </>
   )
 }

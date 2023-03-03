@@ -15,7 +15,7 @@ const Browse = ({ drinks, toggleFav, error }) => {
 
   return (
     <>
-      <Header />
+      <Header className='browse'/>
       <section className="card-display">
         {error && <p>error city</p>}
         {!drinks && <p>loading...</p>}
