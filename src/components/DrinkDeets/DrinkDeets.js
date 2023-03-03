@@ -65,7 +65,7 @@ const gotDrink = {
 const DrinkDeets = () => {
   const [drink, setDrink] = useState({})
   const [error, setError] = useState('')
-  const { id } = useParams()
+  const { id, favorite } = useParams()
 
   useEffect(() => {
     if (!drink.idDrink) {
@@ -92,10 +92,10 @@ const DrinkDeets = () => {
     <>
       <Header page='drink'/>
       <section className="drink-display">
-        <div className="fav-bar">
+        {/* <div className="fav-bar">
           <p>IS THIS YOUR DRINK?</p>
-          <AiOutlineHeart className='heart'/>
-        </div>
+          <button className='fav-button'>{favorite ? <AiFillHeart className='heart'/> : <AiOutlineHeart className='heart'/> }</button>
+        </div> */}
         <img src={drink.strDrinkThumb} alt={`photo of ${drink.strDrink}`} className="drink-img"/>
         <h1>{drink.strDrink}</h1>
         <div className="recipe">

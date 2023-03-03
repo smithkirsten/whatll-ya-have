@@ -68,7 +68,8 @@ const Browse = () => {
 
   const createCards = (favorites) => {
     const showDrinks = favorites ? drinks.filter(drink => drink.favorite): drinks;
-    return showDrinks.map(drink => <NavLink to={`/drink/${drink.idDrink}`}><Drink drink={drink} toggleFav={toggleFav} key={drink.idDrink} /></NavLink>)
+    console.log(showDrinks)
+    return showDrinks.map(drink => <NavLink to={`/drink/${drink.idDrink}/${drink.fav}`}><Drink drink={drink} toggleFav={toggleFav} key={drink.idDrink} /></NavLink>)
   }
 
   return (

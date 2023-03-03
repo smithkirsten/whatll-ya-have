@@ -13,11 +13,14 @@
 .drink-card :hover .drink-name {
   visibility: visible;
 }
-.drink-card .heart {
-  color: #FB78BC;
-  height: 20px;
-  width: 20px;
-  padding: 3px;
+.drink-card .fav-button {
   border-radius: 16px;
   background-color: #D6C9D1;
+  height: 30px;
+  width: 30px;
+  padding: 3px;
+  border: none;
+}
+.drink-card .heart {
+  color: #FB78BC;
 }/*# sourceMappingURL=Drink.css.map */
