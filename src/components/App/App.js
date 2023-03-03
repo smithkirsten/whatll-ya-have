@@ -54,7 +54,7 @@ function App() {
     if(!drinks.length) {
       setDrinks(addFavProp(dummyArray))
     }
-})
+}, [])
 
     const toggleFav = (id) => {
       const updatedDrinks = drinks.map(drink => {

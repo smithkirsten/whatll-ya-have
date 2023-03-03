@@ -27,10 +27,12 @@ export const cleanDrink = (drink) => {
     }
     if(key.includes('strIngredient') && drink[key]) {
       drink.ingredients.push(drink[key])
+      console.log(drink.ingredients)
       delete drink[key]
     }
     if(key.includes('strMeasure') && drink[key]) {
       drink.measurements.push(drink[key])
+      console.log(drink.measurements)
       delete drink[key]
     }
   })

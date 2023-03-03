@@ -68,7 +68,9 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
   const { id, favorite } = useParams()
 
   useEffect(() => {
+    console.log('effective', drink.idDrink)
     if (!drink.idDrink) {
+      console.log('setting')
       setDrink(cleanDrink(gotDrink))
     }
     // if (!drink.idDrink) {
@@ -80,7 +82,7 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
     //     .catch(error => setError(error))
     //}
 
-  }, [])
+  })
 
   const createList = (property) => {
     if(drink.idDrink) {
@@ -89,23 +91,20 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
   }
 
   const assessFav = () => {
-    console.log('drink value: ', drink)
     if(!drink.idDrink) {
-      console.log('no drink!')
       return false
     } 
     const drinkInfo = drinks.find(el => el.idDrink === drink.idDrink)
-    console.log(drinkInfo)
     return drinkInfo.fav ? true : false
   }
 
   return (
     <>
-      <Header />
+      <Header key={'drink'}/>
       <section className="drink-display">
         <div className="fav-bar">
           <p>IS THIS YOUR DRINK?</p>
-          <button className='fav-button'>{ assessFav() ? <AiFillHeart className='heart'/> : <AiOutlineHeart className='heart'/> }</button>
+          <button className='fav-button' onClick={() => toggleFav(drink.idDrink)}>{ assessFav() ? <AiFillHeart className='heart'/> : <AiOutlineHeart className='heart'/> }</button>
         </div>
         <img src={drink.strDrinkThumb} alt={`photo of ${drink.strDrink}`} className="drink-img"/>
         <h1>{drink.strDrink}</h1>
