@@ -1,13 +1,22 @@
 @use '../../../abstract/variables' as *;
 
 .drink-display {
-  @include lightFont(14px);
+  @include lightFont(16px);
   height: 78vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
 
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .fav-bar {
+    display: flex;
+    flex-direction: row;
+  }
   h1 {
     font-size: 32px;
   }
@@ -18,6 +27,10 @@
     flex-direction: row;
     justify-content: space-around;
     padding: 10px;
+    width: 70vmin;
+    .lists {
+      flex-direction: row;
+    }
   }
 
   .directions {
@@ -34,4 +47,11 @@
 
 .heart {
   color: #FB78BC;
+}
+
+@media (min-width: 1050px) {
+  .drink-display {
+    flex-direction: row-reverse;
+  }
+
 }

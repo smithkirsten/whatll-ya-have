@@ -1,12 +1,21 @@
 .drink-display {
   font-family: "Barlow", sans-serif;
   color: #D6C9D1;
-  font-size: 14px;
+  font-size: 16px;
   height: 78vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+}
+.drink-display .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.drink-display .fav-bar {
+  display: flex;
+  flex-direction: row;
 }
 .drink-display h1 {
   font-size: 32px;
@@ -19,6 +28,10 @@
   flex-direction: row;
   justify-content: space-around;
   padding: 10px;
+  width: 70vmin;
+}
+.drink-display .recipe .lists {
+  flex-direction: row;
 }
 .drink-display .directions {
   font-size: 16px;
@@ -31,4 +44,10 @@
 
 .heart {
   color: #FB78BC;
+}
+
+@media (min-width: 1050px) {
+  .drink-display {
+    flex-direction: row-reverse;
+  }
 }/*# sourceMappingURL=DrinkDeets.css.map */

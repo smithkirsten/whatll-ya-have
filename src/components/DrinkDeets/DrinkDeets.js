@@ -105,21 +105,27 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
       <Header key={'drink'}/>
       {!drink && <p>loading...</p>}
       {drink && <section className="drink-display">
-        <div className="fav-bar">
-          <p>IS THIS YOUR DRINK?</p>
-          <button className='fav-button' onClick={() => toggleFav(drink.idDrink)}>{ assessFav() ? <AiFillHeart className='heart'/> : <AiOutlineHeart className='heart'/> }</button>
+        <div className="info">
+          <div className="fav-bar">
+            <p>IS THIS YOUR DRINK?</p>
+            <button className='fav-button' onClick={() => toggleFav(drink.idDrink)}>{ assessFav() ? <AiFillHeart className='heart'/> : <AiOutlineHeart className='heart'/> }</button>
+          </div>
+          <div className="drink">
+            <img src={drink.strDrinkThumb} alt={`photo of ${drink.strDrink}`} className="drink-img"/>
+            <h1>{drink.strDrink}</h1>
+          </div>
         </div>
-        <img src={drink.strDrinkThumb} alt={`photo of ${drink.strDrink}`} className="drink-img"/>
-        <h1>{drink.strDrink}</h1>
-        <div className="recipe">
-          <ul className='ingredients'>
-            {createList('ingredients')}
-          </ul>
-          <ul className='measurements'>
-            {createList('measurements')}
-          </ul>
+        <div className='instructions'>
+          <div className="recipe">
+            <ul className='ingredients'>
+              {createList('ingredients')}
+            </ul>
+            <ul className='measurements'>
+              {createList('measurements')}
+            </ul>
+          </div>
+          <div className="directions">{drink.strInstructions}</div>
         </div>
-        <div className="directions">{drink.strInstructions}</div>
       </section>}
     </>
   )
