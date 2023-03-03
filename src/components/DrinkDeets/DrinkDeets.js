@@ -116,6 +116,7 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
           </div>
         </div>
         <div className='instructions'>
+          <h2>INSTRUCTIONS</h2>
           <div className="recipe">
             <ul className='ingredients'>
               {createList('ingredients')}
@@ -124,7 +125,7 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
               {createList('measurements')}
             </ul>
           </div>
-          <div className="directions">{drink.strInstructions}</div>
+          <div className="directions"><p>{drink.strInstructions}</p></div>
         </div>
       </section>}
     </>

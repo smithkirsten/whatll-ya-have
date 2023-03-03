@@ -27,6 +27,7 @@
     flex-direction: row;
     justify-content: space-around;
     padding: 10px;
+    height: 15vh;
     width: 70vmin;
     .lists {
       flex-direction: row;
@@ -52,6 +53,26 @@
 @media (min-width: 1050px) {
   .drink-display {
     flex-direction: row-reverse;
+    width: 100%;
+    font-size: 20px;
+  }
+  .info {
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 30vw;
+    background-color: $sheerPurp;
+  }
+  .instructions {
+    height: 35vh;
+    background-color: $sheerPurp;
+    .directions {
+      height: 50%;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
 }
