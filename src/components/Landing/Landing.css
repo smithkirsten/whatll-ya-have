@@ -1,8 +1,34 @@
+.welcome-page {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .pitch {
-  background-color: rgba(33, 14, 27, 0.5);
-  height: 60vh;
+  background-color: rgba(33, 14, 27, 0.65);
+  height: 6;
   width: 80vw;
   font-family: "Barlow", sans-serif;
   color: #D6C9D1;
   font-size: 50px;
+  text-align: center;
+}
+
+.enter-button {
+  font-family: "Barlow", sans-serif;
+  color: #D6C9D1;
+  font-size: 30px;
+  background-color: #5A2648;
+  height: 10vh;
+  width: 80vmin;
+  border: 3px #AD93A4 solid;
+  border-radius: 50px;
+}
+
+@media (min-width: 500px) {
+  .enter-button {
+    width: 60vmin;
+  }
 }/*# sourceMappingURL=Landing.css.map */

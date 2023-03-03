@@ -21,13 +21,14 @@
   font-size: 32px;
 }
 .drink-display .recipe {
-  background-color: rgba(33, 14, 27, 0.5);
+  background-color: rgba(33, 14, 27, 0.65);
   height: 10vh;
   width: 90vw;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding: 10px;
+  height: 15vh;
   width: 70vmin;
 }
 .drink-display .recipe .lists {
@@ -49,5 +50,25 @@
 @media (min-width: 1050px) {
   .drink-display {
     flex-direction: row-reverse;
+    width: 100%;
+    font-size: 20px;
+  }
+  .info {
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 30vw;
+    background-color: rgba(33, 14, 27, 0.65);
+  }
+  .instructions {
+    height: 35vh;
+    background-color: rgba(33, 14, 27, 0.65);
+  }
+  .instructions .directions {
+    height: 50%;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }/*# sourceMappingURL=DrinkDeets.css.map */

@@ -9,7 +9,7 @@
   align-content: space-between;
   height: 20vh;
   width: 100%;
-  background-color: rgba(33, 14, 27, 0.5);
+  background-color: rgba(33, 14, 27, 0.65);
   border-bottom: 3px solid #AD93A4;
 }
 
@@ -36,6 +36,6 @@
   font-size: 16px;
   margin: 1em;
   border: none;
-  background-color: rgba(33, 14, 27, 0.5);
+  background-color: rgba(33, 14, 27, 0.65);
   padding: 5px;
 }/*# sourceMappingURL=Header.css.map */
