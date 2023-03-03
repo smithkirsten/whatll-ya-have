@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, useParams } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import './Browse.css'
 import { fetchData } from "../../apiCalls";
@@ -38,7 +38,6 @@ const Browse = () => {
   const [drinks, setDrinks] = useState([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState('')
-  // const { favorites } = useParams()
 
   useEffect(() => {
     // if(!drinks.length) {
@@ -67,8 +66,8 @@ const Browse = () => {
   }
 
   const createCards = (favorites) => {
-    const showDrinks = favorites ? drinks.filter(drink => drink.favorite): drinks;
-    console.log(showDrinks)
+    const path = window.location.href.split('/')[3]
+    const showDrinks = path === 'favorites' ? drinks.filter(drink => drink.favorite): drinks;
     return showDrinks.map(drink => <NavLink to={`/drink/${drink.idDrink}/${drink.fav}`}><Drink drink={drink} toggleFav={toggleFav} key={drink.idDrink} /></NavLink>)
   }
 
