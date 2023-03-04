@@ -4,7 +4,7 @@ describe('DrinkDeets', () => {
       "GET",
       "https://the-cocktail-db.p.rapidapi.com/lookup.php?i=15106",
       {
-        fixture: '../fixtures/allDrinks'
+        fixture: '../fixtures/apello'
       }
     )
     cy.visit("http://localhost:3000/drink/15106");
@@ -27,18 +27,22 @@ describe('DrinkDeets', () => {
   })
 
   it('should have an image of the drink', () => {
-   
+    cy.get('.drink-img').should('')
   })
+
   it('should have the drink name', () => {
-   
+    
   })
+
   it('should have an image of the drink', () => {
-   
+    
   })
+
   it('should have a clickable favorite button', () => {
-   
+    
   })
+
   it('should have instructions', () => {
-   
+    
   })
 })
