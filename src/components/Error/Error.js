@@ -1,5 +1,5 @@
 import React from "react";
-import './Landing.css'
+import './Error.css'
 import Header from "../Header/Header";
 
 const Error = () => {
@@ -7,7 +7,7 @@ const Error = () => {
     <>
       <Header page='error' />
       <section className="error-page">
-        <div className="pitch"><img src='/assets/broken-glass.png' alt='broken glass' /><p>Whoops! Something went wrong</p></div>
+        <div className="error-block"><img src='/assets/broken-glass.png' alt='broken glass' /><p>Whoops! Something went wrong</p></div>
       </section>
     </>
   )

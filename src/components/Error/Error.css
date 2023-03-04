@@ -1,0 +1,19 @@
+.error-page {
+  height: 78vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.error-page .error-block {
+  font-family: "Barlow", sans-serif;
+  color: #D6C9D1;
+  font-size: 36px;
+  background-color: rgba(33, 14, 27, 0.65);
+  height: 40vh;
+  width: 80vw;
+  padding: 20px;
+  text-align: center;
+}
+.error-page .error-block img {
+  height: 20vh;
+}/*# sourceMappingURL=Error.css.map */
