@@ -15,6 +15,7 @@
 
 .enter-button {
   @include lightFont(30px);
+  cursor: pointer;
   background-color: $medPurp;
   height: 10vh;
   width: 80vmin;

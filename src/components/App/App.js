@@ -41,20 +41,20 @@ function App() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    if(!drinks.length) {
-      fetchData()
-        .then(data => {
-          console.log(data)
-          setDrinks(addFavProp(data.drinks))
-        })
-        .catch((error) => {
-          console.log(error)
-          setError(error)
-        })
-    }
     // if(!drinks.length) {
-    //   setDrinks(addFavProp(dummyArray))
+    //   fetchData()
+    //     .then(data => {
+    //       console.log(data)
+    //       setDrinks(addFavProp(data.drinks))
+    //     })
+    //     .catch((error) => {
+    //       console.log(error)
+    //       setError(error)
+    //     })
     // }
+    if(!drinks.length) {
+      setDrinks(addFavProp(dummyArray))
+    }
 }, [])
 
     const toggleFav = (id) => {
