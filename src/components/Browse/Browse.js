@@ -6,7 +6,7 @@ import Drink from '../Drink/Drink'
 
 
 const Browse = ({ drinks, toggleFav, error }) => {
-  const path = window.location.href.split('/')[3]
+  // const path = window.location.href.split('/')[3]
   const navigate = useNavigate;
 
   const createCards = () => {
