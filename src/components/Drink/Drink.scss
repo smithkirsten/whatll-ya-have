@@ -1,7 +1,12 @@
 @use '../../../abstract/variables' as *;
 
 .drink-card {
-  @include cardBack;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $medPurp;;
+  height: 100%;
+  width: 100%;
   .drink-image {
     height: 90%;
     width: 90%;
@@ -10,6 +15,18 @@
     .drink-name {
       visibility: visible;
     }
+  }
+
+  .fav-button {
+    border-radius: 16px;
+    background-color: $palePurp;
+    height: 30px;
+    width: 30px;
+    padding: 3px;
+    border: none;
+  }
+  .heart {
+    color: #FB78BC;
   }
 
 }

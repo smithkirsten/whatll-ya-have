@@ -1,5 +1,7 @@
 import React from "react";
 import './DrinkDeets.css'
+import { AiFillHeart } from 'react-icons/ai'
+import { AiOutlineHeart } from 'react-icons/ai'
 import { cleanDrink } from "../../util";
 import { fetchData } from "../../apiCalls";
 import { useState, useEffect } from "react";
@@ -60,14 +62,18 @@ const gotDrink = {
   "dateModified": "2016-07-18 22:09:04"
 }
 
-const DrinkDeets = (props) => {
+const DrinkDeets = ({ drinks, toggleFav }) => {
   const [drink, setDrink] = useState({})
   const [error, setError] = useState('')
-  const { id } = useParams()
+  const { id, favorite } = useParams()
 
   useEffect(() => {
+    console.log('effective', drink.idDrink)
     if (!drink.idDrink) {
-      setDrink(cleanDrink(gotDrink))
+      console.log('setting')
+      const cleanedDrink = cleanDrink(gotDrink)
+      console.log('cleaned drink: ', cleanedDrink)
+      setDrink(cleanedDrink)
     }
     // if (!drink.idDrink) {
     //   console.log('fetching')
@@ -76,9 +82,9 @@ const DrinkDeets = (props) => {
     //       setDrink(cleanDrink(data.drinks[0]))
     //     })
     //     .catch(error => setError(error))
-    //}
+    // }
 
-  }, [])
+  })
 
   const createList = (property) => {
     if(drink.idDrink) {
@@ -86,26 +92,42 @@ const DrinkDeets = (props) => {
     }
   }
 
+  const assessFav = () => {
+    if(!drink.idDrink) {
+      return false
+    } 
+    const drinkInfo = drinks.find(el => el.idDrink === drink.idDrink)
+    return drinkInfo.fav ? true : false
+  }
+
   return (
     <>
-      <Header page='drink'/>
-      <section className="drink-display">
-        <div className="fav-bar">
-          <p>IS THIS YOUR DRINK?</p>
-          {/* <img /> */}
+      <Header key={'drink'}/>
+      {!drink && <p>loading...</p>}
+      {drink && <section className="drink-display">
+        <div className="info">
+          <div className="fav-bar">
+            <p>IS THIS YOUR DRINK?</p>
+            <button className='fav-button' onClick={() => toggleFav(drink.idDrink)}>{ assessFav() ? <AiFillHeart className='heart'/> : <AiOutlineHeart className='heart'/> }</button>
+          </div>
+          <div className="drink">
+            <img src={drink.strDrinkThumb} alt={`photo of ${drink.strDrink}`} className="drink-img"/>
+            <h1>{drink.strDrink}</h1>
+          </div>
         </div>
-        <img src={drink.strDrinkThumb} alt={`photo of ${drink.strDrink}`} className="drink-img"/>
-        <h1>{drink.strDrink}</h1>
-        <div className="recipe">
-          <ul className='ingredients'>
-            {createList('ingredients')}
-          </ul>
-          <ul className='measurements'>
-            {createList('measurements')}
-          </ul>
+        <div className='instructions'>
+          <h2>INSTRUCTIONS</h2>
+          <div className="recipe">
+            <ul className='ingredients'>
+              {createList('ingredients')}
+            </ul>
+            <ul className='measurements'>
+              {createList('measurements')}
+            </ul>
+          </div>
+          <div className="directions"><p>{drink.strInstructions}</p></div>
         </div>
-        <div className="directions">{drink.strInstructions}</div>
-      </section>
+      </section>}
     </>
   )
 }

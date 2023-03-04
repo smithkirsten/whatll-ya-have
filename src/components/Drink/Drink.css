@@ -1,7 +1,10 @@
 .drink-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #5A2648;
-  height: 30vh;
-  width: 40vw;
+  height: 100%;
+  width: 100%;
 }
 .drink-card .drink-image {
   height: 90%;
@@ -9,4 +12,15 @@
 }
 .drink-card :hover .drink-name {
   visibility: visible;
+}
+.drink-card .fav-button {
+  border-radius: 16px;
+  background-color: #D6C9D1;
+  height: 30px;
+  width: 30px;
+  padding: 3px;
+  border: none;
+}
+.drink-card .heart {
+  color: #FB78BC;
 }/*# sourceMappingURL=Drink.css.map */

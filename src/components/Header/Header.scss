@@ -1,18 +1,22 @@
 @use '../../../abstract/variables' as *;
 
 .header {
-  @include lightFont(14px);
+  @include lightFont(16px);
+  text-align: center;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: space-between;
   height: 20vh;
+  width: 100%;
   background-color: $sheerPurp;
   border-bottom: 3px solid $lightPurp;
 }
 
 .logo {
-  height: 10vh;
-  width: 90vw;
+  height: 9vmax;
+  width: 85vmin;
 }
 
 .reason {
@@ -20,12 +24,15 @@
 }
 
 .buttons {
-  height: 7vh;
+  height: 10vh;
+  justify-content: space-between;
 }
 
 .nav-buttons {
-  // @include lightFont(14px);
+  cursor: pointer;
+  @include lightFont(16px);
+  margin: 1em;
   border: none;
-  background-color: none;
-
+  background-color: $sheerPurp;
+  padding:5px;
 }

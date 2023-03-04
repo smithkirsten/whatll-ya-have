@@ -1,7 +1,33 @@
 @use '../../../abstract/variables' as *;
 
+.welcome-page {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 .pitch {
-  @include transBack(60vh, 80vw);
+  @include transBack(80vw);
   @include lightFont(50px);
+  text-align: center;
+}
 
+.enter-button {
+  @include lightFont(30px);
+  cursor: pointer;
+  background-color: $medPurp;
+  height: 10vh;
+  width: 80vmin;
+  border: 3px $lightPurp solid;
+  border-radius: 50px;
+}
+
+@media (min-width: 500px) {
+  .welcome-page {
+    // height: 70vh;
+  }
+  .enter-button {
+    width: 60vmin;
+  }
 }
