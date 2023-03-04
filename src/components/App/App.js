@@ -8,6 +8,7 @@ import Landing from '../Landing/Landing';
 import Browse from '../Browse/Browse';
 import Favorites from '../Favorites/Favorites';
 import DrinkDeets from '../DrinkDeets/DrinkDeets';
+import Error from '../Error/Error';
 
 const dummyArray = [{
   "strDrink": "Afterglow",
@@ -76,7 +77,9 @@ function App() {
         <Route exact path='/favorites' element={<Favorites drinks={drinks.filter(drink => drink.fav)} toggleFav={toggleFav} />} />
         <Route exact path='/browse' element={<Browse drinks={drinks} toggleFav={toggleFav}/>} />
         <Route exact path='/drink/:id' element={<DrinkDeets drinks={drinks} toggleFav={toggleFav} />} />
+        <Route exact path='/error' element={<Error />}/>
         <Route exact path='/' element={<Landing drinks={drinks} error={error} />}/>
+        <Route path="*" element={<Error error="This page doesn't exist" />} />
       </Routes>
     </main>
   );

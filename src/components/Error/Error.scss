@@ -1,0 +1,17 @@
+@use '../../../abstract/variables' as *;
+
+.error-page {
+  height: 78vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .error-block { 
+    @include lightFont(36px);
+    @include transBack(40vh, 80vw);
+    padding: 20px;
+    text-align: center;
+    img {
+      height: 20vh;
+    }
+  }
+}

@@ -1,25 +1,33 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import './Browse.css'
 import Header from "../Header/Header";
 import Drink from '../Drink/Drink'
 
 
 const Browse = ({ drinks, toggleFav, error }) => {
-  const path = window.location.href.split('/')[3]
+  // const path = window.location.href.split('/')[3]
+  const navigate = useNavigate;
 
   const createCards = () => {
 
     return drinks.map(drink => <NavLink to={`/drink/${drink.idDrink}`} key={Date.now()}><Drink drink={drink} toggleFav={toggleFav} key={drink.idDrink} /></NavLink>)
+  }
+  const determineRender = () => {
+    if(error) {
+      navigate('/error');
+    } else if(!drinks) {
+      return (<p>loading...</p>)
+    } else {
+      return createCards()
+    }
   }
 
   return (
     <>
       <Header className='browse'/>
       <section className="card-display">
-        {error && <p>error city</p>}
-        {!drinks && <p>loading...</p>}
-        {drinks && createCards()}
+        {determineRender()}
       </section>
     </>
   )
