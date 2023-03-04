@@ -79,7 +79,7 @@ function App() {
         <Route exact path='/drink/:id' element={<DrinkDeets drinks={drinks} toggleFav={toggleFav} />} />
         <Route exact path='/error' element={<Error />}/>
         <Route exact path='/' element={<Landing drinks={drinks} error={error} />}/>
-        <Route path="*" element={<Error />} />
+        <Route path="*" element={<Error error="This page doesn't exist" />} />
       </Routes>
     </main>
   );
