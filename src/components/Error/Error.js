@@ -2,7 +2,7 @@ import React from "react";
 import './Landing.css'
 import Header from "../Header/Header";
 
-const Landing = ({ drinks }) => {
+const Error = () => {
   return (
     <>
       <Header page='error' />
@@ -13,4 +13,4 @@ const Landing = ({ drinks }) => {
   )
 }
 
-export default Landing
+export default Error
