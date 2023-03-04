@@ -1,4 +1,4 @@
-[{
+{"drinks": [{
   "strDrink": "Afterglow",
   "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg",
   "idDrink": "12560"
@@ -23,4 +23,4 @@
 "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/syusvw1468876634.jpg",
 "idDrink": "12564"
 }
-]
+]}

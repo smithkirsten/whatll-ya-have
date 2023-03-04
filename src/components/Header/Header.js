@@ -4,7 +4,7 @@ import './Header.css'
 
 const Header = ({ page }) => {
   const path = window.location.href.split('/')[3]
-  const content = <p>there are so many reasons to kick alcohol to the curb</p>
+  const content = <p className='reason'>there are so many reasons to kick alcohol to the curb</p>
   const favButton = <NavLink to='/favorites'><button className="nav-buttons">FAVORITES</button></NavLink>
   const browseButton = <NavLink to='/browse'><button className='nav-buttons'>BROWSE ALL</button></NavLink>
   let position;
