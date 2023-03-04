@@ -7,8 +7,22 @@ describe('Landing Page', () => {
         fixture: '../fixtures/allDrinks'
       }
     )
+    cy.visit("http://localhost:3000/");
   })
+
   it('has the logo', () => {
-    cy.visit('https://example.cypress.io')
+
+  })
+
+  it('displays reason in header', () => {
+
+  })
+
+  it('displays problem to solve', () => {
+
+  })
+
+  it('displays button to nav user to browse', () => {
+    
   })
 })

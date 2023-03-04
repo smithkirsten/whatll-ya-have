@@ -7,8 +7,10 @@ describe('Browse Page', () => {
         fixture: '../fixtures/allDrinks'
       }
     )
+    cy.visit("http://localhost:3000/");
   })
-  it('has the logo', () => {
-    cy.visit('https://example.cypress.io')
+  it('has the logo in the header', () => {
+
   })
+  it('has a favorites button in the header')
 })
