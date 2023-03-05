@@ -118,13 +118,16 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
 
       return (<section className="drink-display">
       <div className="info">
-        <div className="fav-bar">
+        {/* <div className="fav-bar">
           <p>IS THIS YOUR DRINK?</p>
-          <button className='fav-button' onClick={() => toggleFav(drink.idDrink)}>{ assessFav() ? <AiFillHeart className='heart'/> : <AiOutlineHeart className='heart'/> }</button>
-        </div>
+          <button className='fav-button' onClick={() => toggleFav(drink.idDrink)}>{ assessFav() ? <img src={'/assets/fav-fill.svg'} alt='drink is favorited' className='heart' /> : <img src={'/assets/fav-empty.svg'} alt='drink is not favorited' className='heart'/> }</button>
+        </div> */}
         <div className="drink">
           <img src={drink.strDrinkThumb} alt={`${drink.strDrink}`} className="drink-img"/>
-          <h1>{drink.strDrink}</h1>
+          <div className="drink-name">
+            <h1>{drink.strDrink}</h1>
+            <button className='fav-button' onClick={() => toggleFav(drink.idDrink)}>{ assessFav() ? <img src={'/assets/fav-fill.svg'} alt='drink is favorited' className='heart' /> : <img src={'/assets/fav-empty.svg'} alt='drink is not favorited' className='heart'/> }</button>
+          </div>
         </div>
       </div>
       <div className='instructions'>
@@ -148,32 +151,6 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
     <>
     <Header key={'drink'}/>
     {determineRender()}
-      {/* <Header key={'drink'}/>
-      {!drink && <p>loading...</p>}
-      {drink && <section className="drink-display">
-        <div className="info">
-          <div className="fav-bar">
-            <p>IS THIS YOUR DRINK?</p>
-            <button className='fav-button' onClick={() => toggleFav(drink.idDrink)}>{ assessFav() ? <AiFillHeart className='heart'/> : <AiOutlineHeart className='heart'/> }</button>
-          </div>
-          <div className="drink">
-            <img src={drink.strDrinkThumb} alt={`photo of ${drink.strDrink}`} className="drink-img"/>
-            <h1>{drink.strDrink}</h1>
-          </div>
-        </div>
-        <div className='instructions'>
-          <h2>INSTRUCTIONS</h2>
-          <div className="recipe">
-            <ul className='ingredients'>
-              {createList('ingredients')}
-            </ul>
-            <ul className='measurements'>
-              {createList('measurements')}
-            </ul>
-          </div>
-          <div className="directions"><p>{drink.strInstructions}</p></div>
-        </div>
-      </section>} */}
     </>
   )
 }

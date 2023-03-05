@@ -40,32 +40,57 @@
 
 }
 
+.drink {
+  width: 75%;
+}
+
 .drink-img {
   height: 35vh;
   border: 10px solid $medPurp;
 }
 
+.drink-name {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
 
-.heart {
-  color: #FB78BC;
+  .fav-button {
+    background-color: $palePurp;
+    height: 7vh;
+    width: 5vw;
+    border: none;
+    border-radius: 50px;
+  }
+
+  .heart {
+    height: 2em;
+  }
 }
+
+  
 
 @media (min-width: 1050px) {
   .drink-display {
-    flex-direction: row-reverse;
+    flex-direction: row;
     width: 100%;
     font-size: 20px;
   }
-  .info {
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    width: 30vw;
-    background-color: $sheerPurp;
-  }
+
+  // .info {
+  //   justify-content: center;
+  //   align-items: center;
+  //   height: 50vh;
+  //   width: 30vw;
+  //   background-color: $sheerPurp;
+  //   padding: 20px;
+  // }
+
   .instructions {
     height: 35vh;
-    background-color: $sheerPurp;
+    background-color: $darkPurp;
+    padding: 20px;
+
     .directions {
       height: 50%;
       font-size: 24px;
