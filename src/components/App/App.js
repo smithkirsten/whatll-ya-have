@@ -48,14 +48,15 @@ function App() {
           console.log(data)
           setDrinks(addFavProp(data.drinks))
         })
-        .catch((error) => {
-          console.log(error)
-          setError(error)
+        .catch((err) => {
+          console.log(err)
+          setError(err.message)
         })
     }
     // if(!drinks.length) {
     //   setDrinks(addFavProp(dummyArray))
     // }
+    // eslint-disable-next-line
 }, [])
 
     const toggleFav = (id) => {
@@ -75,7 +76,7 @@ function App() {
     <main>
       <Routes>
         <Route exact path='/favorites' element={<Favorites drinks={drinks.filter(drink => drink.fav)} toggleFav={toggleFav} />} />
-        <Route exact path='/browse' element={<Browse drinks={drinks} toggleFav={toggleFav}/>} />
+        <Route exact path='/browse' element={<Browse drinks={drinks} error={error} toggleFav={toggleFav}/>} />
         <Route exact path='/drink/:id' element={<DrinkDeets drinks={drinks} toggleFav={toggleFav} />} />
         <Route exact path='/error' element={<Error />}/>
         <Route exact path='/' element={<Landing drinks={drinks} error={error} />}/>
