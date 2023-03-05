@@ -7,16 +7,19 @@ import Drink from '../Drink/Drink'
 
 const Browse = ({ drinks, toggleFav, error }) => {
   // const path = window.location.href.split('/')[3]
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   const createCards = () => {
 
     return drinks.map(drink => <NavLink to={`/drink/${drink.idDrink}`} key={Date.now()}><Drink drink={drink} toggleFav={toggleFav} key={drink.idDrink} /></NavLink>)
   }
   const determineRender = () => {
+    console.log(error)
+    console.log(drinks)
     if(error) {
+      console.log('rent free')
       navigate('/error');
-    } else if(!drinks) {
+    } else if(!drinks && !error) {
       return (<p>loading...</p>)
     } else {
       return createCards()
