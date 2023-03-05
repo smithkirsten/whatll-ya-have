@@ -5,7 +5,7 @@ import { AiOutlineHeart } from 'react-icons/ai'
 import { cleanDrink } from "../../util";
 import { fetchData } from "../../apiCalls";
 import { useState, useEffect } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 
 const gotDrink = {
@@ -65,7 +65,8 @@ const gotDrink = {
 const DrinkDeets = ({ drinks, toggleFav }) => {
   const [drink, setDrink] = useState({})
   const [error, setError] = useState('')
-  const { id, favorite } = useParams()
+  const navigate = useNavigate();
+  const { id } = useParams();
 
   useEffect(() => {
     // console.log('effective', drink.idDrink)
@@ -75,13 +76,21 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
     //   console.log('cleaned drink: ', cleanedDrink)
     //   setDrink(cleanedDrink)
     // }
-    if (!drink.idDrink) {
+      if (!drink.idDrink && !error) {
       console.log('fetching')
       fetchData(id)
         .then(data => {
-          setDrink(cleanDrink(data.drinks[0]))
+          if(data.drinks === null) {
+            <p className="loading">NULL DRINKS, BABY!</p>
+            setError('No drinks')
+          } else {
+            setDrink(cleanDrink(data.drinks[0]))
+          }
         })
-        .catch(error => setError(error))
+        .catch(error => {
+          console.log(error)
+          setError(error.message)
+        })
     }
 
   })
@@ -100,9 +109,46 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
     return drinkInfo.fav ? true : false
   }
 
+  const determineRender = () => {
+    if(error || drink === null) {
+      navigate('/error')
+    } else if (!drink.idDrink) {
+      return <p className="loading">loading</p>
+    } else {
+
+      return (<section className="drink-display">
+      <div className="info">
+        <div className="fav-bar">
+          <p>IS THIS YOUR DRINK?</p>
+          <button className='fav-button' onClick={() => toggleFav(drink.idDrink)}>{ assessFav() ? <AiFillHeart className='heart'/> : <AiOutlineHeart className='heart'/> }</button>
+        </div>
+        <div className="drink">
+          <img src={drink.strDrinkThumb} alt={`${drink.strDrink}`} className="drink-img"/>
+          <h1>{drink.strDrink}</h1>
+        </div>
+      </div>
+      <div className='instructions'>
+        <h2>INSTRUCTIONS</h2>
+        <div className="recipe">
+          <ul className='ingredients'>
+            {createList('ingredients')}
+          </ul>
+          <ul className='measurements'>
+            {createList('measurements')}
+          </ul>
+        </div>
+        <div className="directions"><p>{drink.strInstructions}</p></div>
+      </div>
+    </section>)
+
+    }
+  }
+
   return (
     <>
-      <Header key={'drink'}/>
+    <Header key={'drink'}/>
+    {determineRender()}
+      {/* <Header key={'drink'}/>
       {!drink && <p>loading...</p>}
       {drink && <section className="drink-display">
         <div className="info">
@@ -127,7 +173,7 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
           </div>
           <div className="directions"><p>{drink.strInstructions}</p></div>
         </div>
-      </section>}
+      </section>} */}
     </>
   )
 }

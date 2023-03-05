@@ -20,7 +20,7 @@ const Browse = ({ drinks, toggleFav, error }) => {
       console.log('rent free')
       navigate('/error');
     } else if(!drinks && !error) {
-      return (<p>loading...</p>)
+      return (<p className="loading">loading...</p>)
     } else {
       return createCards()
     }
