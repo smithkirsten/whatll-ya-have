@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="/assets/favico.png" width="120" height="120">
+<img src="public/assets/favico.png" width="120" height="120">
   
 # What'll Ya Have
   
