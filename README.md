@@ -79,9 +79,11 @@ Users can browse alcohol-free drinks for any occasion and click a drink card to 
 
 ## Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+<img width="1436" alt="Screen Shot 2023-03-05 at 8 42 52 PM" src="https://user-images.githubusercontent.com/101011015/223002679-15a45023-bef2-47b9-9462-c5d8a34d5be6.png">
 
  
- ![ezgif com-video-to-gif](https://user-images.githubusercontent.com/113261334/221386610-b01bd089-a587-49bf-bd4d-c2ef6916606f.gif)
+
+<img width="1436" alt="Screen Shot 2023-03-05 at 9 01 19 PM" src="https://user-images.githubusercontent.com/101011015/223002835-32fb83e4-b48f-4896-89e9-f3e5304abfa7.png">
 
 
   
