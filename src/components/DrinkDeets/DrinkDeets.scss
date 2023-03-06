@@ -1,12 +1,13 @@
 @use '../../../abstract/variables' as *;
 
 .drink-display {
-  @include lightFont(16px);
+  @include lightFont(20px);
+  width: 100%;
   height: 78vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   .info {
     display: flex;
@@ -21,23 +22,39 @@
     font-size: 32px;
   }
 
+  .instructions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 67vw;
+    height: 70%;
+    background-color: $darkPurp;
+    padding: 20px;
+
+  }
+
   .recipe {
     @include transBack(10vh, 90vw);
     display: flex;
     flex-direction: row;
+    font-size: 12px;
     justify-content: space-around;
     padding: 10px;
     height: 15vh;
     width: 70vmin;
+
     .lists {
       flex-direction: row;
     }
-  }
 
-  .directions {
-    font-size: 16px;
+    .directions {
+      height: 50%;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
-
 }
 
 .drink {
@@ -66,38 +83,4 @@
   .heart {
     height: 2em;
   }
-}
-
-  
-
-@media (min-width: 1050px) {
-  .drink-display {
-    flex-direction: row;
-    width: 100%;
-    font-size: 20px;
-  }
-
-  // .info {
-  //   justify-content: center;
-  //   align-items: center;
-  //   height: 50vh;
-  //   width: 30vw;
-  //   background-color: $sheerPurp;
-  //   padding: 20px;
-  // }
-
-  .instructions {
-    height: 35vh;
-    background-color: $darkPurp;
-    padding: 20px;
-
-    .directions {
-      height: 50%;
-      font-size: 24px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-
 }

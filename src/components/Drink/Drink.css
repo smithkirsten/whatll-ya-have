@@ -23,4 +23,7 @@
 }
 .drink-card .heart {
   color: #FB78BC;
+}
+.drink-card .hidden {
+  display: none;
 }/*# sourceMappingURL=Drink.css.map */
