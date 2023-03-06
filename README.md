@@ -73,7 +73,7 @@ Users can browse alcohol-free drinks for any occasion and click a drink card to 
   
 ## Deployed Link
 
-[Click here to view deployed app on Vercel]([https://smithkirsten.vercel.app/](https://whatll-ya-have.vercel.app/))
+[Click here to view deployed app on Vercel]([https://whatll-ya-have.vercel.app/])
 
 ---
 
