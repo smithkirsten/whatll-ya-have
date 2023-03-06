@@ -6,7 +6,6 @@ import Drink from '../Drink/Drink'
 
 
 const Browse = ({ drinks, toggleFav, error }) => {
-  // const path = window.location.href.split('/')[3]
   const navigate = useNavigate();
 
   const createCards = () => {
@@ -30,7 +29,9 @@ const Browse = ({ drinks, toggleFav, error }) => {
     <>
       <Header className='browse'/>
       <section className="card-display">
-        {determineRender()}
+        <div className="grid">
+          {determineRender()}
+        </div>
       </section>
     </>
   )
