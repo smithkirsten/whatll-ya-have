@@ -1,12 +1,13 @@
 .drink-display {
   font-family: "Barlow", sans-serif;
   color: #D6C9D1;
-  font-size: 16px;
+  font-size: 20px;
+  width: 100%;
   height: 78vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .drink-display .info {
   display: flex;
@@ -20,12 +21,22 @@
 .drink-display h1 {
   font-size: 32px;
 }
+.drink-display .instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 67vw;
+  height: 70%;
+  background-color: #431C36;
+  padding: 20px;
+}
 .drink-display .recipe {
   background-color: rgba(33, 14, 27, 0.65);
   height: 10vh;
   width: 90vw;
   display: flex;
   flex-direction: row;
+  font-size: 12px;
   justify-content: space-around;
   padding: 10px;
   height: 15vh;
@@ -34,8 +45,16 @@
 .drink-display .recipe .lists {
   flex-direction: row;
 }
-.drink-display .directions {
-  font-size: 16px;
+.drink-display .recipe .directions {
+  height: 50%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drink {
+  width: 75%;
 }
 
 .drink-img {
@@ -43,32 +62,19 @@
   border: 10px solid #5A2648;
 }
 
-.heart {
-  color: #FB78BC;
+.drink-name {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
 }
-
-@media (min-width: 1050px) {
-  .drink-display {
-    flex-direction: row-reverse;
-    width: 100%;
-    font-size: 20px;
-  }
-  .info {
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    width: 30vw;
-    background-color: rgba(33, 14, 27, 0.65);
-  }
-  .instructions {
-    height: 35vh;
-    background-color: rgba(33, 14, 27, 0.65);
-  }
-  .instructions .directions {
-    height: 50%;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.drink-name .fav-button {
+  background-color: #D6C9D1;
+  height: 7vh;
+  width: 5vw;
+  border: none;
+  border-radius: 50px;
+}
+.drink-name .heart {
+  height: 2em;
 }/*# sourceMappingURL=DrinkDeets.css.map */
