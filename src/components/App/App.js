@@ -60,6 +60,7 @@ function App() {
 }, [])
 
     const toggleFav = (id) => {
+      console.log('toggling', id)
       const updatedDrinks = drinks.map(drink => {
         if(drink.idDrink === id) {
           return {

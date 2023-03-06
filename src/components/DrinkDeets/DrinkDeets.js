@@ -81,7 +81,6 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
       fetchData(id)
         .then(data => {
           if(data.drinks === null) {
-            <p className="loading">NULL DRINKS, BABY!</p>
             setError('No drinks')
           } else {
             setDrink(cleanDrink(data.drinks[0]))
@@ -118,10 +117,6 @@ const DrinkDeets = ({ drinks, toggleFav }) => {
 
       return (<section className="drink-display">
       <div className="info">
-        {/* <div className="fav-bar">
-          <p>IS THIS YOUR DRINK?</p>
-          <button className='fav-button' onClick={() => toggleFav(drink.idDrink)}>{ assessFav() ? <img src={'/assets/fav-fill.svg'} alt='drink is favorited' className='heart' /> : <img src={'/assets/fav-empty.svg'} alt='drink is not favorited' className='heart'/> }</button>
-        </div> */}
         <div className="drink">
           <img src={drink.strDrinkThumb} alt={`${drink.strDrink}`} className="drink-img"/>
           <div className="drink-name">
